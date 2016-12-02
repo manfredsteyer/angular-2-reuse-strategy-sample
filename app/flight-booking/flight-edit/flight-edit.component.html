@@ -1,0 +1,42 @@
+<h1>Flight Edit!</h1>
+<p>Hier könnte auch der Datensatz mit der Id {{id}} stehen!</p>
+
+<div *ngIf="exitWarning.show" class="alert alert-warning">
+    <div>
+        Daten wurden nicht gespeichert! Trotzdem Maske verlassen?
+    </div>
+    <div>
+        <a href="javascript:void(0)" (click)="decide(true)" class="btn btn-danger">Ja</a>
+        <a href="javascript:void(0)" (click)="decide(false)" class="btn btn-default">Nein</a>
+    </div>
+</div>
+
+<!--
+<div *ngIf="flight">
+-->
+<div *ngIf="message">
+    {{message}}
+</div>
+
+<div class="form-group">
+    <label>Id</label>
+    <input class="form-control" [(ngModel)]="flight.id">
+</div>
+<div class="form-group">
+    <label>From</label>
+    <input class="form-control" [(ngModel)]="flight.from">
+</div>
+<div class="form-group">
+    <label>To</label>
+    <input class="form-control" [(ngModel)]="flight.to">
+</div>
+<div class="form-group">
+    <label>Datum</label>
+    <input class="form-control" [(ngModel)]="flight.date">
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="save()">Save</button>
+</div>
+<!--
+</div>
+-->

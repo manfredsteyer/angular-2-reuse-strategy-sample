@@ -1,0 +1,9 @@
+<h1 *ngIf="!userName">Welcome!</h1>
+<h1 *ngIf="userName">Welcome, {{userName}}!</h1>
+
+<p *ngIf="needLogin" class="alert alert-warning">
+    Please login to use the requested part of this application.
+</p>
+
+<button class="btn btn-default" flightE2eLocator="login" (click)="login()">Login</button>
+<button class="btn btn-default" (click)="logout()">Logout</button>

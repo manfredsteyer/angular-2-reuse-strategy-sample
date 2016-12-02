@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a [routerLink]="['/home', {showDetail:false}]" [preserveQueryParams]="true">Home</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/flight-booking']" [preserveQueryParams]="true">Book a flight</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/bookings']" [preserveQueryParams]="true">Your Bookings</a></li>
+        <li><a (click)="activateExpertMode()">Activate Expert Mode</a></li>
+        <li><a (click)="deactivateExpertMode()">Deactivate Expert Mode</a></li>
+
+        <li><a [routerLink]="[{outlets: { aux: ['history', {showDetail: true}] }}]">Show History</a></li>
+        <li><a [routerLink]="[{outlets: { aux: null }}]">Hide History</a></li>
+
+    </ul>
+</nav>
+
+<div class="container">
+
+<div class="row">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="row">
+    <router-outlet name="aux"></router-outlet>
+</div>
+
+</div>
+
+<div *ngIf="showWaitInfo" style="background-color: black; opacity: 0.3; width:100%; height:100%; left:0px; top:0px; position: absolute;" >
+    <div class="spinner"></div>
+</div>
+
+
+<!-- Fußzeile -->
