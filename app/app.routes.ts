@@ -17,12 +17,12 @@ let APP_ROUTES: Routes = [
         component: HomeComponent
     },
 
+
     {
         path: 'flight-booking',
         loadChildren: './flight-booking/flight-booking.module#FlightBookingModule',
         // canLoad: [AuthLoadGuard]
     },
-
     {
         path: 'bookings',
         component: BookingsComponent
